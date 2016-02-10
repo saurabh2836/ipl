@@ -78,13 +78,9 @@ class Welcome extends CI_Controller {
         foreach($the_days as $key1=>$value1):
            
             foreach($the_date as $key2=>$value2):
-                echo "<pre>";
-                echo __line__ . '</br>';
-                print_r($value2);
-                echo "</pre>";
-                die();
+             
             if($key1 == $key2):
-                $final[$value2] = $value1;
+                $final[$value1][] = $value2;
                 endif;
             endforeach;
             
@@ -93,9 +89,9 @@ class Welcome extends CI_Controller {
         echo "<pre>";
         echo __line__ . '</br>';
         print_r($final);
-     
         echo "</pre>";
         die();
+        
         echo "<pre>";
         echo __line__ . '</br>';
         shuffle($temp);
